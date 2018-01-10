@@ -1,0 +1,21 @@
+<table class="table table-hover">
+<tr class="table-primary">
+  <th scope="row">{{user.username}}</th>
+  <td>{{user.name}}</td>
+  <td>{{user.email}}</td>
+</tr>
+</table>
+<h1>Posts</h1>
+<div  *ngFor="let new of news" class="card text-white bg-primary mb-3" style="max-width: 60rem;" >
+  <div class="card-header">By {{new.author}}
+          <span class="badge badge-primary badge-pill">{{new['_kmd']['lmt']}}</span>
+      
+  </div>
+  
+  
+  <div class="card-body">
+    <h4 class="card-title">{{new.title}}</h4>
+    <p class="card-text">{{new.text}}</p>
+    <button type="button" (click)="readMore(new)" class="btn btn-primary btn-lg btn-block">Read more...</button>
+  </div>
+</div>

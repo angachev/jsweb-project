@@ -1,0 +1,14 @@
+<div class="container">
+
+  <h1>Latest News</h1>
+<div class="list-group">
+  <a *ngFor="let new of news"  (click)="readMore(new)" class="list-group-item list-group-item-action flex-column align-items-start active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{new.title}}</h5>
+      <small>{{new['_kmd']['lmt']}}</small>
+    </div>
+    <p class="mb-1">{{new.text}}</p>
+    <small>By {{new.author}}</small>
+  </a>
+</div>
+</div>

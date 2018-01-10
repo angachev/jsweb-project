@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <h1 class="display-3">{{newNew.title}}</h1>
+  <p class="lead">By {{newNew.author}}</p>
+  <hr class="my-4">
+  <p>{{newNew.text}}</p>
+  <div *ngIf="newsService.isCreator(creator)||authService.isAdmin()">
+  <p class="lead">
+    
+    <button type="button" (click)="deleteNew()" class="btn btn-danger">Delete</button>
+    <button type="button" (click)="editNew()" class="btn btn-info">Info</button>
+  
+  </p>
+</div>
+</div>
