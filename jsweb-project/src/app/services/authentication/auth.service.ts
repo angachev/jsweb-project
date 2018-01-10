@@ -7,6 +7,7 @@ import { HttpHeaders } from '@angular/common/http'
 import { LoginInputModel } from "../../models/input-models/login-input.model";
 import { RegisterInputModel } from "../../models/input-models/register-input.model";
 
+const ADMIN_ROLE="17d946b5-80eb-4aa4-8f2a-2c04ee068d51"
 
 const appKey = 'kid_Syo-_Ms7M';
 const appSecret = '04a08800d54f47b2acab585d66a30608';
@@ -67,6 +68,14 @@ export class AuthService {
     isLoggedIn() {
         let authtoken:string =localStorage.getItem('authtoken');
         return authtoken===this.currentAuthtoken;
+    }
+
+    isAdmin(){
+        if(localStorage.getItem('roles')===undefined){
+            return false
+        }
+        let roles=localStorage.getItem('roles')
+        return roles ===ADMIN_ROLE;
     }
 
     get authtoken(){

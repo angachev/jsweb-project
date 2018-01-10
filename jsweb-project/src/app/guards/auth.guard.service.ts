@@ -14,11 +14,13 @@ import { AuthService } from '../services/authentication/auth.service';
 export class AuthGuard implements CanActivate, CanLoad {
   constructor(
     private authService : AuthService,
-    private router : Router
+    private router : Router,
   ) { }
   
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    
     return this.checkLoggedIn(state.url);
+    
   }
 
   canLoad(route: Route): boolean {

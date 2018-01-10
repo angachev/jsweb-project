@@ -1,1 +1,27 @@
-<button type="button" [routerLink]="['/createNew']" class="btn btn-primary btn-lg btn-block">Create new New</button>
+<div class="container">
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+</div>
+<div *ngIf="authService.isLoggedIn()">
+    <button type="button" [routerLink]="['/createNew']" class="btn btn-primary btn-lg btn-block">Create new New</button>
+</div>
+
+    <div *ngFor="let new of news" class="card text-white bg-primary mb-3" style="max-width: 60rem;">
+         
+        <div class="card-header">By {{new.author}}
+            <span class="badge badge-primary badge-pill">{{new['_kmd']['lmt']}}</span>
+
+        </div>
+
+        <div class="card-body">
+            <h4 class="card-title">{{new.title}}</h4>
+            <p class="card-text">{{new.text}}</p>
+            <button type="button" (click)="readMore(new)" class="btn btn-primary btn-lg btn-block">Read more...</button>
+        </div>
+
+    </div>
+
+<div *ngIf="noNews()">
+    <h1>No News</h1>
+</div>

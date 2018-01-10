@@ -3,11 +3,17 @@
   <div class="form-group">
     <label for="title">Title</label>
     <input formControlName="title" type="text" class="form-control" id="title" aria-describedby="title" placeholder="Title">
+    <div *ngIf="titleMessage" class="alert alert-danger">
+        {{titleMessage}}
+      </div>
   </div>
 
   <div class="form-group">
     <label for="text">Text</label>
     <textarea formControlName="text" class="form-control" id="text" rows="3" placeholder="Text"></textarea>
+    <div *ngIf="textMessage" class="alert alert-danger">
+        {{textMessage}}
+      </div>
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>

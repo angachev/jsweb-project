@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { LogoutComponent } from './logout/logout.component';
 import { AuthService } from "../../services/authentication/auth.service";
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AuthService } from "../../services/authentication/auth.service";
     declarations:[
         LoginComponent,
         RegisterComponent,
-        LogoutComponent
+        LogoutComponent,
+        HomeComponent
     ],
     exports:[],
     providers:[AuthService]
